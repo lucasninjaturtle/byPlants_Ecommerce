@@ -1,13 +1,12 @@
 const server = require('express').Router();
-<<<<<<< Updated upstream
+
 const { Order, User} = require('../db.js');
 const {sendEmail} = require('../util/sendEmail')
 
-=======
-const { Order} = require('../db.js');
+
 const {REACT_APP_BACKEND_URL} = process.env;
 const {REACT_APP_FRONTEND_URL} = process.env;
->>>>>>> Stashed changes
+
 // SDK de Mercado Pago
 const mercadopago = require ('mercadopago');
 
