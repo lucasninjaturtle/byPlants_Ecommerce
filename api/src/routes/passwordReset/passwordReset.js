@@ -44,7 +44,7 @@ function passwordReset(user) {
   
   </html>`
 
-  const resetButton = `<a style="padding:0.5em; display:inline-block; text-decoration:none; background-color: #507b00; color:#ffffff; margin:.5em; border-radius:.5em;"href="http://localhost:3000/login/reset/${token}">Recuperar Contraseña</a>`
+  const resetButton = `<a style="padding:0.5em; display:inline-block; text-decoration:none; background-color: #507b00; color:#ffffff; margin:.5em; border-radius:.5em;"href="https://byplantas-three.vercel.app/login/reset/${token}">Recuperar Contraseña</a>`
   modelEmail = modelEmail.replace("%username%", user.firstname.toUpperCase());
   modelEmail = modelEmail.replace("%resetlink%", resetButton)
 
