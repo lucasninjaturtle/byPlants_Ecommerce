@@ -5,9 +5,9 @@ import {useHistory} from "react-router"
 import { FaGoogle } from 'react-icons/fa';
 import {useDispatch} from 'react-redux'
 import { googleLogin } from '../../Redux/actions/userActions';
-
+const { CLIENTID } = process.env;
 const {REACT_APP_BACKEND_URL} = process.env;
-const clientId = '515747986042-aams7flhu6mhnr1boi3mnm0pdqlih0il.apps.googleusercontent.com'
+
 
 function GoogleCredentialsLogin() {
     const history = useHistory()
@@ -31,7 +31,7 @@ function GoogleCredentialsLogin() {
     return (
         <div>
             <GoogleLogin
-                clientId={clientId}
+                clientId={CLIENTID}
                 render={renderProps => (
                     <button onClick={renderProps.onClick} disabled={renderProps.disabled} className={`btn btnByPlantas justify-content-center align-content-center`}>  
                     <i><FaGoogle size={13}/></i> Login
