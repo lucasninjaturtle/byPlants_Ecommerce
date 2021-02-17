@@ -5,7 +5,7 @@ import { logout } from '../../Redux/actions/userActions';
 import { useDispatch } from 'react-redux';
 import styles from './googlestyles.module.css'
 
-const { CLIENTID } = process.env;
+const { client_id } = process.env;
 
 function GoogleCredentialsLogout() {
     const history = useHistory()
@@ -18,7 +18,7 @@ function GoogleCredentialsLogout() {
     return (
         <div>
             <GoogleLogout
-                clientId={CLIENTID}
+                clientId={client_id}
                 render={renderProps => (
                     <h6 onClick={renderProps.onClick} disabled={renderProps.disabled} className={styles.logout}>  
                         Salir
