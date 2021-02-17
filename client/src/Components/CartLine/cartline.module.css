@@ -2,21 +2,31 @@
     border: 2px solid #a17e30;
     background-color: #fff;
     height: 10rem;
+    width: 100%;
     display: flex;
     align-items: center;
-    align-content: space-between;
-    padding: 0.5em;
-    padding-right: 1em;
+    align-content: center;
+    justify-content: space-between;
+    padding: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     margin: 0;
-    margin-right: 0;
-    margin-left: 0;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
+}
+
+.imgTitleContainer{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0; 
+    padding: 0;
+    width: 40%;
 }
 
 .imgContainer {
     display: flex;
-    margin: 1em;
-    float: left;
+    padding: 0.5rem;
     justify-content: center;
 }
 
@@ -24,43 +34,98 @@
     border: none;
     height: 7rem;
     width: auto;
-
-}
-
-.detailsContainer {
-    margin-left: 15%;
-    text-align: left;
 }
 
 .titleContainer {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .titleCart {
     font-weight: 500;
     line-height: 1;
     margin: 0;
+    width: 100%
+}
+
+.buttonDetailsContainer{
+    display: flex;
+    flex-direction: row-reverse;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0; 
+    padding: 0;
+    width: 40%;
 }
 
 .textContainer {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 1em;
-    margin-right: 5rem;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.buttonTrashContainer{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 5%;
+    margin: 0;
+    margin-right: 1rem;
+    padding: 0;
 }
 
 .btnCierre {
     background: rgb(163, 49, 49);
-    border-radius: 50%;
+    border-radius: 5px;
     color: #f5f5ef;
     border: none;
-    height: 2.2em;
-    width: 2.2em;
-    align-self: flex-end;
+    height: 2.2rem;
+    width: 2.2rem;
 }
 
 .btnContador:focus {
     outline: none;
+}
+
+@media (max-width: 720px) {
+    .cartlineContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        height: auto;
+        padding: 1rem;
+    }
+    .imgTitleContainer {
+        justify-content: space-between;
+        height: auto;
+        width: 100%;
+    }
+    .img {
+        height: auto;
+        width: auto;
+    }
+    .buttonDetailsContainer {
+        justify-content: space-between;
+        height: auto;
+        width: 100%;
+
+    }
+    .buttonTrashContainer {
+        height: auto;
+        width: auto;
+        padding: 0;
+        margin: 0;
+    }
 }

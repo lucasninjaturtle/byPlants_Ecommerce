@@ -11,15 +11,16 @@ const ReviewContainer = ({ reviews, match }) => {
   }
   let userLocalstorage = JSON.parse(localStorage.getItem('userInfo'))
   return (
-    <div className={`containerByPlantas m-0`}>
-      <h4 className={`${styles.titlereviews } d-flex justify-content-center`}>Reseñas</h4>
-      <div className={`containerByPlantas m-3`}>
+    <div className={`${styles.reviewContainer}`}>
+      <h4 className={`${styles.titlereviews} d-flex justify-content-center`}>Reseñas</h4>
+      <div className={`${styles.reviews}`}>
         {open && <FormReview idProd={match.params.id}/>}
         {
           userLocalstorage &&
-          <div className="w-25 mx-auto">
+
+          <div className={`${styles.addReviewButton}`}>
             <button 
-              className="btn btnByPlantas my-1 btn-sm"
+              className="btn btnByPlantas btn-sm"
               onClick={handleClick}
               >
                 Agregar Review

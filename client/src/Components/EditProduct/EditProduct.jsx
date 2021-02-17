@@ -144,7 +144,7 @@ const EditProduct = ({product}) => {
                 return(
                   <div key={index}>
                     <input type='checkbox' className='form-check-input' id={x.id} name={x.name} onChange={handleChangeCat} onClick={handleClick}/>
-                    <label className='form-check-label' htmlFor={x.id}>{x.name}</label>
+                    <label className='form-check-label text-dark' htmlFor={x.id}>{x.name}</label>
                   </div>
                 )
               })}

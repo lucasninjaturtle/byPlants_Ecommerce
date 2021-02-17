@@ -1,6 +1,32 @@
+.accountContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+@media (max-width: 720px) {
+    .accountContainer {
+        margin: 1rem;
+        margin-bottom: 5rem;
+    }
+}
+
+.formLoginContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 80%;
+}
+
 .buttonContainer {
     display: flex;
     justify-content: center;
+    width: 10rem;
 }
 
 .horizontalRule {

@@ -1,7 +1,8 @@
 .containerByPlantasCarousel{
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 50%;
-    height: 15em;
+    height: 15rem;
     justify-content: center;
     align-content: center;
     margin: auto;
@@ -15,9 +16,9 @@
     color: #f5f5ef;
 }
 .carouselSlide1{
-    display:flex;
+    display: flex;
     width: 100%;
-    max-height: 30em;
+    max-height: 30rem;
     padding-top: 7.5%;
     padding-bottom: 7.5%;
     background-image: url("https://res.cloudinary.com/pachuley/image/upload/v1612482434/2_zijcle.png");
@@ -27,9 +28,9 @@
 }
 
 .carouselSlide2{
-    display:flex;
+    display: flex;
     width: 100%;
-    max-height: 30em;
+    max-height: 30rem;
     padding-top: 7.5%;
     padding-bottom: 7.5%;
     background-image: url("https://res.cloudinary.com/pachuley/image/upload/v1612482446/1_jfgx4x.png");
@@ -39,15 +40,8 @@
     justify-content: center;
 }
 
-.carouselSlide3{
-    display: block;
-    width: 100%;
-    max-height: 30em;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    background-image: url("https://res.cloudinary.com/pachuley/image/upload/v1612482469/3_xlt66x.png");
-    background-size: cover;
-    align-content: center;
-    background-position: 0;
-    justify-content: center;
+.buttonContainer{
+    margin: auto;
+    width: 7rem;
+    height: auto;
 }

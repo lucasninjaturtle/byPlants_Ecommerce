@@ -40,7 +40,6 @@ const ProductCard = ({ name, description, price, imgs, stock, id }) => {
         <h5 className={`${styles.titleBody} card-title`}>{name}</h5>
         <hr/>
         <span className={`${styles.priceBody} card-text`}>Precio: ARS$ {price}</span>
-        <span className={`${styles.stockBody} card-text`}>Stock: {stock}</span>
         <div className={`${styles.starAverage}`}>
           {revAverage > 0 ?
           <StarRatingComponent

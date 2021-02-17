@@ -1,12 +1,16 @@
 .productDetailContainer {
-    display: block;
+    display: flex;
+    flex-direction: column;
     margin: 5em;
 }
 
 .productDetailCard {
     display: flex; 
-    margin-top: 10em;
+    width: 100%;
+    height: auto;
     align-items: flex-start;
+    justify-content: space-between;
+    align-content: center;
 }
 
 .imgButtonCard {
@@ -15,6 +19,7 @@
     padding: 2em;
     padding-top: 0;
     justify-content: center;
+    width: 30%;
 }
 
 .imgCard {
@@ -26,15 +31,18 @@
 .detailsCard {
     display: flex;
     flex-direction: column;
-    padding-top: 0;
-    justify-content: center;
     align-content: center;
+    justify-content: center;
+    margin: 0;
+    padding: 2rem;
+    border: 2px solid #a17e30;
+    background-color: #fff;
+    width: 65%;
+    height: 100%;
 }
 
-.titleDetails {
-    margin: 0;
-    padding: 0;
-    font-weight: 500;
+.description {
+    font-size: larger;
 }
 
 .hrDetails {
@@ -55,4 +63,16 @@
 
 .spanDetails2 {
     margin-right: 1em;
+}
+
+@media (max-width: 720px) {
+    .productDetailCard {
+        flex-direction: column;
+    }
+    .imgButtonCard{
+        width: 100%;
+    }
+    .detailsCard{
+        width: 100%;
+    }
 }

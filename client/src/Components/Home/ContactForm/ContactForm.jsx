@@ -42,8 +42,8 @@ const ContactForm = () => {
       })
 
     return(
-        <div className={`${styles.contacts} mt-7`}>
-            <form className={`w-100 py-3 needs-validation mx-auto`} onSubmit={formik.handleSubmit}>
+        <div className={`${styles.contact}`}>
+            <form className={`${styles.contactForm} needs-validation`} onSubmit={formik.handleSubmit}>
                 <h2 className={`${styles.titles}`}>Contáctanos!</h2>
                 <label htmlFor='inputEmail' className='form-label'>Email</label>
                 <input 

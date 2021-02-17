@@ -10,11 +10,11 @@ import Swal from 'sweetalert2'
 const BtnUpdateCart = ({productId,quantity}) => {
     const userLogin = useSelector(state => state.userLogin)
     const dispatch = useDispatch()
-    const [qty,setQty] = useState(0)
+    const [qty,setQty] = useState('')
     const isAuth =  userLogin.userLogin
 
     useEffect(()=>{
-        setQty(quantity)
+        // setQty(quantity)
     },[])
 
     const handleChangeQty = (event) => {
@@ -23,14 +23,14 @@ const BtnUpdateCart = ({productId,quantity}) => {
 
     const handleUpdate = () => {
         if(qty === 0){
-            setQty(0)
+            setQty('')
             Swal.fire({
             title: 'Ingrese un valor mayor a 0!',
             icon: 'error'
         })
         }else{
             dispatch(updateItem(productId,qty))
-            setQty(qty)
+            setQty('')
             Swal.fire({
                 title: 'Se edito la cantidad!',
                 icon: 'success'
@@ -42,13 +42,13 @@ const BtnUpdateCart = ({productId,quantity}) => {
     <div className="form-group">
         <input 
             type="number" 
-            className="form-control form-control-sm" 
+            className="form-control form-control-sm my-3" 
             onChange={handleChangeQty}
             value={qty}
             min={1}
             />
         <button 
-            className="btn btnByPlantas mt-1"
+            className="btn btnByPlantas my-3"
             onClick={handleUpdate}
         >
             <FaEdit/> Editar

@@ -64,9 +64,9 @@ const ProductsList = (props) => {
               <Link to='/addProduct' className={`text-center btn btnByPlantas ${styles.btnEdit}`}>Agregar Producto</Link>
               <Link to='/addCategory' className={`text-center btn btnByPlantas ${styles.btnEdit}`}>Agregar Categoría</Link>
             </div>
-            <table className="table table-striped table-bordered table-hover table-condensed">
+            <table className="table table-hover table-dark thfontsize">
                 <thead>
-                 <tr className="btn-outline-primary">
+                 <tr>
                       <th>Nombre</th>
                       <th>Descripción</th>
                       <th>Precio</th>
@@ -85,7 +85,8 @@ const ProductsList = (props) => {
                                   <td>{p.description}</td>
                                   <td>{p.price}</td>
                                   <td>{p.stock}</td>
-                                  <div>
+                                  <td>
+                                    <div>
               {p.categories.map((x,index)=>{
                 return(
                   <div key={index}>
@@ -94,6 +95,7 @@ const ProductsList = (props) => {
                 )
               })}
           </div> 
+                                    </td>
               <td>
                 <EditProduct product={p}/>
               </td>

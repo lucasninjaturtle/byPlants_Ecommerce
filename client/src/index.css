@@ -81,12 +81,6 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
 }
 
-.containerByPlantas {
-  margin: 5em;
-  display: block;
-  justify-content: center;
-}
-
 .error{
   color: rgb(163, 49, 49);
   font-size: 0.8rem;

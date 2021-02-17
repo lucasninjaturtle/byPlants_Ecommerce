@@ -2,31 +2,31 @@ import React, {Fragment} from 'react';
 import CategoriesFilter from '../CategoriesFilters/CategoriesFilters'
 import InputFilter from '../InputFilter/InputFilter'
 import styles from './filterscontainer.module.css'
+import {FaTrashAlt} from 'react-icons/fa'
 
 const FiltersContainer = (
     {categories,handleCategory,categorySelected,handleInputFilter, handleCleanFilters, value, count, sortProducts}) => {
     
     return ( 
         <Fragment>
-            {/* <h5 className={`m-0 text-center`}>Filtrar</h5>
-            <hr/> */}
-            {/* <SearchBar/> */}
-            <div className="d-flex justify-content-between align-items-center">
-                <div>
-                    <p className="m-0">
-                        ({count}){count === 1 ? ' Producto' : ' Productos'}
-                    </p>
+            <div className="d-flex justify-content-between align-items-center p-2">
+                <div className={`${styles.searchBarContainer}`}>
+                    <div>
+                        <span className={`${styles.counterSpan}`}>
+                            ({count}){count === 1 ? ' Producto' : ' Productos'}
+                        </span>
+                    </div>
+                    <div>
+                        <InputFilter 
+                            handleInputFilter={handleInputFilter}
+                            value={value}
+                        />
+                    </div>
                 </div>
-                <div className="">
-                    <InputFilter 
-                        handleInputFilter={handleInputFilter}
-                        value={value}
-                    />
-                </div>
-                <div className="d-flex align-items-center">
-                    <p className="m-0 px-2">Precio:</p>
+                <div className={`${styles.precioContainer}`}>
+                    <span>Precio: </span>
                     <select 
-                        className="form-control"
+                        className={`${styles.precioSearchbar} form-control`}
                         onChange={sortProducts}
                     >
                         <option>Precio</option>
@@ -34,18 +34,22 @@ const FiltersContainer = (
                         <option value="mayorPrecio">Mayor precio</option>
                     </select>
                 </div>
-                <div className="">
-                    <CategoriesFilter 
-                        categories={categories}
-                        handleCategory={handleCategory}
-                        categorySelected={categorySelected}
-                    />
+                <div className={`${styles.categoriesFilterContainer}`}>
+                    <div className="">
+                        <CategoriesFilter 
+                            categories={categories}
+                            handleCategory={handleCategory}
+                            categorySelected={categorySelected}
+                        />
+                    </div>
                 </div>
+                <div className={`${styles.trashButtonContainer}`}>
                     <button 
-                        className={`rounded-circles my-2 ${styles.btnLimpiar}`}
+                        className={`btn ${styles.trashButton}`} 
                         onClick={handleCleanFilters}>
-                        Limpiar
+                        <FaTrashAlt size={20}/>
                     </button>
+                </div>
             </div>
         </Fragment>
      );

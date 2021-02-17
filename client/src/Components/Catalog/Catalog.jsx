@@ -11,41 +11,43 @@ const Catalog = ({products}) => {
     const handlePageChange = (page) => {
         setCurrentpage(page)
     }
-    const productsPag = paginate(products, currentpage, 9)
+    const productsPag = paginate(products, currentpage, 12)
     return (
-        <div className='Catalog'>
-            {products.length === 0 ? 
-                <p className={`${styles.aviso}`}>
-                    No se encontraron productos con esos parámetros
-                </p>
-            :
-                <>
-                    <hr/>
-                    <div className={`${styles.catalog}`}>
-                        {productsPag.map(product=> 
-                        <div className="col-3">
-                            <ProductCard
-                            key={product.id}
-                            id = {product.id}
-                            name = {product.name}
-                            description = {product.description}
-                            price = {product.price}
-                            stock = {product.stock}
-                            imgs = {product.imgs}
+        <div className={`${styles.catalogContainer}`}>
+            <div className='Catalog'>
+                {products.length === 0 ? 
+                    <p className={`${styles.aviso}`}>
+                        No se encontraron productos con esos parámetros
+                    </p>
+                :
+                    <>
+                        <hr/>
+                        <div className={`${styles.catalog}`}>
+                            {productsPag.map(product=> 
+                            <div>
+                                <ProductCard
+                                key={product.id}
+                                id = {product.id}
+                                name = {product.name}
+                                description = {product.description}
+                                price = {product.price}
+                                stock = {product.stock}
+                                imgs = {product.imgs}
+                                />
+                            </div>
+                            )}
+                        </div>
+                        <div className="d-flex py-2 justify-content-center">
+                            <Pagination
+                                itemsCount = {products.length}
+                                pageSize = {12}
+                                onPageChange={handlePageChange}
+                                currentPage={currentpage}
                             />
                         </div>
-                        )}
-                    </div>
-                    <div className="d-flex py-2 justify-content-center">
-                        <Pagination
-                            itemsCount = {products.length}
-                            pageSize = {9}
-                            onPageChange={handlePageChange}
-                            currentPage={currentpage}
-                        />
-                    </div>
-                </>           
-            }
+                    </>           
+                }
+            </div>
         </div>
     )
 }

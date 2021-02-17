@@ -7,8 +7,8 @@ const BtnCheckout = ({disabled,handleCheckout}) => {
     return ( 
         <div> 
             <button 
-                className="btn btn-sm btn-secondary"
-                className={`${disabledLink} btn btn-sm btn-secondary`}   
+                className="btn btnByPlantas"
+                className={`${disabledLink} btn btnByPlantas`}   
                 onClick={handleCheckout}
             >
                 Checkout

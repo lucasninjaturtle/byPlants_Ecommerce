@@ -52,7 +52,7 @@ const FormLogin = ({ location, ...props }) => {
   }, [history, userLogin]);  
   
   return (
-    <div className='container col-md-6 justify-content-center'>
+    <div className={`${styles.formLoginContainer}`}>
       {error && (
         <div className='alert alert-primary' role='alert'>
           {error}
@@ -64,7 +64,7 @@ const FormLogin = ({ location, ...props }) => {
           {props.history.location.state.message}
         </div>
       }
-      <form className={` w-50 py-3 needs-validation mx-auto`} onSubmit={formik.handleSubmit}>
+      <form onSubmit={formik.handleSubmit}>
         <h4 className={`${styles.titles}`}>Ingresa a tu cuenta!</h4>
         <label htmlFor='inputLoginEmail' className='form-label'>
           Escribe tu Email
@@ -80,7 +80,7 @@ const FormLogin = ({ location, ...props }) => {
           value={formik.values.email}
         />
         {formik.errors.email && formik.touched.email ? <p className='my-2 error'>{formik.errors.email}</p> : null}
-
+        
         <label htmlFor='inputLoginPassword' className='form-label'>
           Escribe tu Contraseña
         </label>
@@ -97,17 +97,17 @@ const FormLogin = ({ location, ...props }) => {
         {formik.errors.password && formik.touched.password ? (
           <p className='my-2 error'>{formik.errors.password}</p>
         ) : null}
-        <button
-          className={`btn mt-2 mb-3 my-auto btnByPlantas`}
-          type='submit'
-          disabled={Object.keys(formik.errors).length > 0}>
-          Ingresa
-        </button>
-        <div className="container text-center">
-        <Link className={`link`}
-                        to={`/login/reset`}>Olvidaste tu contraseña?</Link>
+        <div className={`${styles.buttonContainer}`}>
+          <button
+            className={`btn btnByPlantas`}
+            type='submit'
+            disabled={Object.keys(formik.errors).length > 0}>
+            Ingresa
+          </button>
         </div>
-        
+        <div className={`${styles.linkContainer}`}>
+          <Link className={`link`}to={`/login/reset`}>Olvidaste tu contraseña?</Link>
+        </div>
       </form>
     </div>
   );

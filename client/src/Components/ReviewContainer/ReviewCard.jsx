@@ -21,7 +21,6 @@ const ReviewCard = ({title,comment,stars,name,lastname}) => {
                 <p>{comment}</p>
                 <div className={`${styles.namecard} d-flex justify-content-end`}>
                         <cite>-{name}</cite>
-                        {/* <cite className="px-1">{lastname}</cite> */}
                 </div>
             </div>
         </div>

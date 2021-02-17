@@ -31,32 +31,36 @@ const CartLine = ({ product }) => {
   };
   return (
     <div className={`${styles.cartlineContainer}`}>
-      <div className={`${styles.imgContainer} col-2`}>
-        <img src={imgs ? imgs : imgDefault} className={`${styles.img} img-fluid img-thumbnail`} alt='' />
+      <div className={`${styles.imgTitleContainer}`}>
+        <div className={`${styles.imgContainer}`}>
+          <img src={imgs ? imgs : imgDefault} className={`${styles.img} img-fluid img-thumbnail`} alt='' />
+        </div>
+        <div className={`${styles.titleContainer}`}>
+          <h5 className={`${styles.titleCart}`}>{productName || product.name}</h5>
+        </div>
       </div>
-      <div className='col-3'>
-        <h5 className={`${styles.titleCart}`}>{productName || product.name}</h5>
-      </div>
-      <div className='col-2'>
-        {
-          product.orderId ? 
-            <BtnUpdateCart 
-            productId={productId} 
-            quantity={quantity}
+      <div className={`${styles.buttonDetailsContainer}`}>
+        <div className={`${styles.buttonContainer}`}>
+          {
+            product.orderId ? 
+              <BtnUpdateCart 
+              productId={productId} 
+              quantity={quantity}
+              />
+            :
+            <BtnCart 
+              productId={productId} 
+              quantity={quantity}
             />
-          :
-          <BtnCart 
-            productId={productId} 
-            quantity={quantity}
-          />
-        }
+          }
+        </div>
+        <div className={`${styles.textContainer}`}>
+          <span>Precio: ARS {isAuth ? totalCartline?.total : totalCartlineGuest?.total}</span>
+          <span>Cant: {quantity}</span>
+        </div>
       </div>
-      <div className={`${styles.textContainer}`}>
-        <span>Precio: ARS {isAuth ? totalCartline?.total : totalCartlineGuest?.total}</span>
-        <span>Cant: {quantity}</span>
-      </div>
-      <div>
-        <button className={`${styles.btnCierre} col-2`} onClick={() => removeItem(productId)}>
+      <div className={`${styles.buttonTrashContainer}`}>
+        <button className={`${styles.btnCierre}`} onClick={() => removeItem(productId)}>
           <FaTrashAlt/>
         </button>
       </div>

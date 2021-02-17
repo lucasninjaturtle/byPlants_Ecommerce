@@ -5,13 +5,25 @@
     background-position: top;
 }
 
+@media (max-width: 540px) {
+    .carouselContainer {
+        display: none;
+    }
+  }
+
 .titles {
     font-weight: 500;
     text-align: center;    
 }
 
+@media (max-width: 720px) {
+    .filosofiaContainer {
+        display: none;
+    }
+  }
+
 .filosofia {
-    padding: 2.5em 7em;
+    padding: 2.5rem 7rem;
     justify-content: space-around;
     text-align: center;
     width: 70%;
@@ -20,30 +32,56 @@
 
 .filosofiaP {
     font-style: italic;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     color: #a17e30;
     font-weight: 500;
 }
 
-.carruselOfertas {
-    text-align: center;
-    align-content: center;
-    margin: 0 6em;
-    background-color: #a17e30;
-    justify-content: space-around;
+.contactformContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.carousel-inner {
-    margin: auto;
+@media (max-width: 992px) {
+    .contactformContainer {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+  }
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    width: 100%;
 }
 
-.contacts {
-    align-content: center;
-    margin: 5em 10em;
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
 }
 
 .profile {
     text-align: center;
+    width: 20%;
+}
+
+@media (max-width: 720px) {
+    .profile {
+        width: 30%;
+    }
+}
+
+@media (max-width: 540px) {
+    .profile {
+        width: 80%;
+    }
 }
 
 .profileimg {
@@ -61,21 +99,8 @@
     transition: 0.5s;
   } 
 
-  @media (max-width: 540px) {
-    .carousel {
-        display: none;
-    }
-  }
+.profileText{
+    height: 5rem;
+}
 
-  @media (max-width: 720px) {
-    .filosofiaContainer {
-        display: none;
-    }
-  }
 
-  @media (max-width: 992px) {
-    .contactformContainer {
-        display: flex;
-        width: 100%;
-    }
-  }

@@ -1,5 +1,6 @@
 const server = require('express').Router();
-const { Order} = require('../db.js');
+const { Order, User} = require('../db.js');
+const {sendEmail} = require('../util/sendEmail')
 
 // SDK de Mercado Pago
 const mercadopago = require ('mercadopago');
@@ -87,13 +88,19 @@ server.get("/pagos", (req, res)=>{
 
   //Aquí edito el status de mi orden
   Order.findByPk(orderId)
-  .then((order) => {
+  .then(async (order) => {
     order.payment_id= payment_id
     order.payment_status= payment_status
     order.merchant_order_id = merchant_order_id
     order.status = "complete"
     console.info('Salvando order')
     order.save()
+    let user = await User.findOne({
+      where: {
+        id: order.userId , 
+      }
+    });
+    sendEmail(user.firstname,user.email, user.lastname, order.id)
     Order.create({
       userId: userId,
     })

@@ -48,21 +48,19 @@ const ProductDetail = ({match, ...props}) =>{
     let {stock, name, price, imgs, description} = prod
     return(
         <div className={`${styles.productDetailContainer}`}>
-           <div className={`${styles.productDetailCard}`}>
-               <div className={`${styles.imgButtonCard} col-4`}>
+            <h2 className={`m-0 text-center p-5`}>{name}</h2>
+            <div className={`${styles.productDetailCard}`}>
+               <div className={`${styles.imgButtonCard}`}>
                     <img src={`${imgs ? imgs : 'https://cdn.iconscout.com/icon/premium/png-256-thumb/coming-soon-label-842108.png'}`} alt="" className={`${styles.imgCard} img-fluid`}/>
                     <BtnCart 
                         productId={parseInt(match.params.id)}
                         quantity={item !== undefined ? item.quantity : 0}
                     />
                </div>
-               <div className={`${styles.detailsCard} col-8`}>
-                    <h4 className={`${styles.titleDetails} col-8`}>{name}</h4>
-                    <hr className={`${styles.hrDetails}`}/>
-                    <span>{description}</span>
+               <div className={`${styles.detailsCard}`}>
+                    <span className={`${styles.description}`}>{description}</span>
                     <hr className={`${styles.hrDetails}`}/>
                     <span className={`${styles.spanDetails1}`}>Precio: ARS$ {price}</span>
-                    <span>Stock: {stock}</span>
                     <hr className={`${styles.hrDetails}`}/>
                     <div className={`${styles.reviewsDetails}`}>
                         <span className={`${styles.spanDetails2}`}>Calificación Promedio: </span>

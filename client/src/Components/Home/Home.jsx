@@ -9,7 +9,7 @@ const Home = () => {
         <Fragment>
             <div className={`${styles.home}`}>
     
-                <section className={`${styles.carousel}`}>
+                <section className={`${styles.carouselContainer}`}>
                     <ControlledCarousel/>
                 </section>
 

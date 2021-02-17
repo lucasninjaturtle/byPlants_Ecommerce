@@ -104,7 +104,7 @@ errors.clarification = 'Ingresar un detalle';
     e.preventDefault()
     let erroresestrueono = Object.keys(errors).length === 0
     Object.keys(errors).length === 0 ? setbtnDisabled(false) : setbtnDisabled(true)
-    
+    localStorage.removeItem('cartItems');    
   }
 
 
@@ -117,30 +117,23 @@ errors.clarification = 'Ingresar un detalle';
       <div>
         <h2 className={`m-0 text-left p-5`}>¿Estas listo para comprar?</h2>
       </div>
-      <div className={`${styles.checkout}`}>
-        <div className={`col-8`}>
-          {cart ? (
-            cartItems.map((product, index) => (
-              <div key={index}>
-                <CartCheckOut product={product} />
-              </div>
-            ))
-          ) : (
-            <h1>El carrito esta vacio</h1>
-          )}
+      <div className={`${styles.checkoutShippingAddress}`}>
+        <div className={`${styles.checkout}`}>
+            {cart ? (
+              cartItems.map((product, index) => (
+                <div key={index}>
+                  <CartCheckOut product={product} />
+                </div>
+              ))
+            ) : (
+              <h1>El carrito esta vacio</h1>
+            )}
         </div>
-        <div className="text-center container col-3">
-          { btnDisabled ? '' :
-          <Payment btnDisabled={btnDisabled}/>
-         }
-        </div>
-      </div>
-      <div className={`${styles.shippingdetail}`}>
-        <div>
+        <div className={`${styles.shippingdetail}`}>
         {/* disabled={Object.keys(errors).length > 0} */}
-          <form onSubmit={handleSubmit} className="mx-auto w-50 py-3" >
-            <button className={`btn btnByPlantas`} type='submit' disabled={Object.keys(errors).length > 0}>Aceptar para pagar</button>
-            <div>
+          <form onSubmit={handleSubmit} className={`${styles.shippingForm} mx-auto`} >
+            <h4 className={`m-0 text-center pb-3`}>Datos de envío</h4>
+            <div className={`m-auto pb-3`}>
               <label>Nombre:</label>
               <input
                 className={`${errors.name && "danger"}`}
@@ -150,7 +143,8 @@ errors.clarification = 'Ingresar un detalle';
                 value={input.name}
               />
               {errors.name && <p className="my-2 error">{errors.name}</p>}
-          <br></br>
+          
+            <br></br>
               <label>Apellido:</label>
               <input
                 className={`${errors.lastname && "danger"}`}
@@ -160,7 +154,8 @@ errors.clarification = 'Ingresar un detalle';
                 value={input.lastname}
               />
               {errors.lastname && <p className="my-2 error">{errors.lastname}</p>}
-              <br></br>
+            
+            <br></br>
               <label>Identificador:</label>
               <input
                 className={`${errors.identifier && "danger"}`}
@@ -170,19 +165,20 @@ errors.clarification = 'Ingresar un detalle';
                 value={input.identifier}
               />
               {errors.identifier && <p className="my-2 error">{errors.identifier}</p>}
-
-              <br></br>
-              <label>Dirección:</label>
+            
+            <br></br>
+              <label>Dirección de envio:</label>
               <input
                 className={`${errors.address && "danger"}`}
                 type="text"
                 name="address"
+                row='5'
                 onChange={handleInputChange}
                 value={input.address}
               />
               {errors.address && <p className="my-2 error">{errors.address}</p>}
 
-              <br></br>
+            <br></br>
               <label>Codigo Postal:</label>
               <input
                 className={`${errors.postalcode && "danger"}`}
@@ -193,7 +189,7 @@ errors.clarification = 'Ingresar un detalle';
               />
               {errors.postalcode && <p className="my-2 error">{errors.postalcode}</p>}
 
-              <br></br>
+            <br></br>
               <label>Aclaración:</label>
               <input
                 className={`${errors.clarification && "danger"}`}
@@ -203,11 +199,15 @@ errors.clarification = 'Ingresar un detalle';
                 value={input.clarification}
               />
               {errors.clarification && <p className="my-2 error">{errors.clarification}</p>}
-              
-            
             </div>
+            <button className={`btn btnByPlantas ${styles.shippingButton}`} type='submit' disabled={Object.keys(errors).length > 0}>Pagar</button>
           </form>
         </div>
+      </div>
+      <div className={`${styles.payment}`}>
+        { btnDisabled ? '' :
+        <Payment btnDisabled={btnDisabled}/>
+        }
       </div>
     </div>
   );

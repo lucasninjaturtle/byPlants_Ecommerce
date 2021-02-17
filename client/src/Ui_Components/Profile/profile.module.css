@@ -17,3 +17,20 @@
 .photo{
     width: 100%;
 }
+
+.tableDiv{
+    width: 40%;
+    margin: 6rem auto;
+}
+
+.tableP{
+    margin: 0%;
+}
+
+.tableCaption{
+    text-align: center;
+}
+
+.tableCaptionLink:hover{
+    color:rgb(0, 71, 0)
+}

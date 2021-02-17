@@ -75,9 +75,9 @@ const CatalogContainer = (props) => {
                 <Spinner />
                     :
                     <div >
-                        <div className = {`row containerByPlantas`}>
+                        <div className = {`${styles.catalogContainer}`}>
                                 <h2 className={`m-0 text-center p-5`}>Busca en nuestra gran oferta de productos!</h2>
-                                <div className={`col-12 p-2 ${styles.catalogSearchBar}`}>
+                                <div className={`col-10  ${styles.catalogSearchBar}`}>
                                     <FiltersContainer 
                                         categories={categories}
                                         handleCategory={handleCategory}

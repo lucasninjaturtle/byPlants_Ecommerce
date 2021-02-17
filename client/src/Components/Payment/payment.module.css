@@ -1,34 +1,26 @@
+.payment {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin: 0;
+    margin-bottom: 3rem;
+    padding: 0;
+    width: 100%;
+    border: 2px solid #a17e30;
+    background-color: #fff;
+    height: 15rem;
+    text-align: center;
+}
+
 .pagoTotal {
-    margin: 1em;
+    margin: 1rem;
 }
 
 .mercadoPago {
-    margin: 1em;
+    margin: 1rem;
 }
 
 .boton {
-    margin: 1em;
-}
-
-.payment {
-    display: flex;
-    align-content: flex-start;
-    justify-content: space-evenly;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: grid;
-        border: 2px solid #a17e30;
-        background-color: #fff;
-        height: 20rem;
-        
-        align-items: center;
-        align-content: space-between;
-        padding: 0.5em;
-        padding-right: 1em;
-        margin: 0;
-        margin-right: 0;
-        margin-left: 0;
-        margin-bottom: 1em;
-    
+    margin: 1rem;
 }

@@ -66,7 +66,7 @@ const Reset=(props)=> {
             token ?
             <div className='container col-md-6 justify-content-center'>
               <form className={` w-50 py-3 needs-validation mx-auto  d-flex flex-column flex-wrap`} onSubmit={formik.handleSubmit}>
-              <h4 className={"text-center fw-5"}>Recupera tu contraseña</h4>
+              <h2 className={`m-0 text-center p-5`}>Recupera tu contraseña</h2>
               <label htmlFor='inputLoginPassword' className='text-center form-label'>
           Ingresa tu correo electronico
         </label>
@@ -104,7 +104,7 @@ const Reset=(props)=> {
               </form>
             </div>
               : <div className='container col-md-6 justify-content-center'><form onSubmit={formikReset.handleSubmit}  className={` w-50 py-3 needs-validation mx-auto  d-flex flex-column`}>
-                <h4 className={"text-center fw-5"}>Recupera tu contraseña</h4>
+                <h2 className={`m-0 text-center p-5`}>Recupera tu contraseña</h2>
                 <span className={"text-center"}>Cambiar contraseña</span>
                 <input
                   name="email"
@@ -113,7 +113,7 @@ const Reset=(props)=> {
                   onChange={formikReset.handleChange}
                   className={"mb-2 form-control"}
                 />
-                <label className={"text-center mt-2"}>Ingrese su direccion de correro electronico para enviarle el email de restauracion</label>
+                <label className={"text-center mt-2"}>Ingrese su dirección de correro electrónico para enviarle el email de restauración</label>
                 <input
                   type="submit"
                   value="Enviar"

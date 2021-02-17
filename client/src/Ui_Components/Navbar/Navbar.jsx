@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import styles from './navbar.module.css'
 import Logout from '../Logout/Logout'
 import { useSelector} from 'react-redux'
+import { FaShoppingCart } from 'react-icons/fa';
 
 const NavBar = () => {
     const userLogin = useSelector(state => state.userLogin)
@@ -25,7 +26,7 @@ const NavBar = () => {
                         </li>
                         {userLogin.userLogin === null || userLogin.userLogin.role !== "ADMIN_ROLE" ?
                             <li className={`nav-item ${styles.liMargin}`}>
-                                <NavLink className={`${styles.link}`} activeClassName={`${styles.alink}`} exact to="/cart" >Carrito</NavLink>
+                                <NavLink className={`${styles.link}`} activeClassName={`${styles.alink}`} exact to="/cart" ><FaShoppingCart size={25}/></NavLink>
                                 <span class="badge badge-info">{cartItems.length === 0 ? '' : cartItems.length}</span>
                             </li>
                             : ""}
