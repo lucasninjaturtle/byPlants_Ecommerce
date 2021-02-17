@@ -12,7 +12,7 @@ function GoogleCredentialsLogout() {
     const dispatch = useDispatch();
     const onSuccess = () => {
         dispatch(logout())
-        history.push("/");
+        window.location = '/';
     };
 
     return (
