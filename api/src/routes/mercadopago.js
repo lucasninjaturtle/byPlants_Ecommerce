@@ -1,7 +1,13 @@
 const server = require('express').Router();
+<<<<<<< Updated upstream
 const { Order, User} = require('../db.js');
 const {sendEmail} = require('../util/sendEmail')
 
+=======
+const { Order} = require('../db.js');
+const {REACT_APP_BACKEND_URL} = process.env;
+const {REACT_APP_FRONTEND_URL} = process.env;
+>>>>>>> Stashed changes
 // SDK de Mercado Pago
 const mercadopago = require ('mercadopago');
 
@@ -41,9 +47,9 @@ let orderId = 0;
       installments: 3  //Cantidad máximo de cuotas
     },
     back_urls: {
-      success: 'http://localhost:3001/mercadopago/pagos',
-      failure: 'http://localhost:3001/mercadopago/pagos',
-      pending: 'http://localhost:3001/mercadopago/pagos',
+      success: `${REACT_APP_BACKEND_URL}/mercadopago/pagos`,
+      failure: `${REACT_APP_BACKEND_URL}/mercadopago/pagos`,
+      pending: `${REACT_APP_BACKEND_URL}/mercadopago/pagos`,
     },
     shipments: {
       receiver_address: {
@@ -108,17 +114,17 @@ server.get("/pagos", (req, res)=>{
       
       // res.json({ok: true, message : 'se completo la order'})
       console.info('redirect success')
-      //return res.redirect("http://localhost:3000")
-      return res.redirect("http://localhost:3000")
+    
+      return res.redirect(`${REACT_APP_FRONTEND_URL}/mercadopago/pagos`)
     })
     .catch((err) =>{
       console.error('error al salvar', err)
-      return res.redirect(`http://localhost:3000/?error=${err}&where=al+salvar`)
+      return res.redirect(`${REACT_APP_FRONTEND_URL}/?error=${err}&where=al+salvar`)
     })
   })
   .catch(err =>{
     console.error('error al buscar', err)
-    return res.redirect(`http://localhost:3000/?error=${err}&where=al+buscar`)
+    return res.redirect(`${REACT_APP_FRONTEND_URL}/?error=${err}&where=al+buscar`)
   })
 
   //proceso los datos del pago 

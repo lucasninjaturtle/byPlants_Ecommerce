@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import styles from './payment.module.css'
 import Swal from 'sweetalert2'
 import { useSelector } from 'react-redux'
-
 const {REACT_APP_BACKEND_URL} = process.env;
 
 const Payment = (btnDisabled) =>{
@@ -21,7 +20,7 @@ const userLogin = useSelector(state => state.userLogin)
 
   useEffect(()=>{
     
-    axios.post("http://localhost:3001/mercadopago", {cartItems, userLogin})
+    axios.post(`${REACT_APP_BACKEND_URL}/mercadopago`, {cartItems, userLogin})
     .then((data)=>{
       setDatos(data.data)
       console.info('Contenido de data:', data)
