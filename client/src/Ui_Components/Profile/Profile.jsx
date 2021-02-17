@@ -17,8 +17,8 @@ const Profile = (props) => {
     }, [])
     return ( 
         isAuth ?
-        <div className='row'>
-            <div className={`${styles.profile} col-6`}>
+        <div className={`${styles.profileContainer}`}>
+            <div className={`${styles.profile}`}>
                 <div className={`${styles.photocontainer}`}>
                     <img 
                         src="https://image.flaticon.com/icons/png/512/16/16363.png" alt=""
@@ -46,7 +46,7 @@ const Profile = (props) => {
                     <span className="px-2">{userLogin.userLogin.address}</span>
                 </div>
             </div>
-            <div className={`${styles.tableDiv} col-6`}>
+            <div className={`${styles.tableDiv}`}>
                 <table className={`table table-hover table-bordered table-dark ${styles.table}`}>
                     <caption className={styles.tableCaption}>
                         En esta tabla se ven tus ordenes de compra si aun no tiene una, te invitamos a dar un vistaso a nuestro <Link to="/products" className={styles.tableCaptionLink}>Catalogo!</Link>

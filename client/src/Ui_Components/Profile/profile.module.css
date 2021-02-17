@@ -1,5 +1,11 @@
+.profileContainer{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: flex-start;
+}
 .profile{
-    width: 40%;
+    width: 45%;
     border: 1px solid #507b00;
     border-radius: 5px;
     margin: 6rem auto;
@@ -19,7 +25,7 @@
 }
 
 .tableDiv{
-    width: 40%;
+    width: 45%;
     margin: 6rem auto;
 }
 
@@ -33,4 +39,18 @@
 
 .tableCaptionLink:hover{
     color:rgb(0, 71, 0)
+}
+
+@media (max-width: 720px) {
+    .profileContainer {
+        flex-direction: column;
+    }
+    .profile {
+        width: 90%;
+        margin: 1rem;
+    }
+    .tableDiv {
+        width: 90%;
+        margin: 1rem;
+    }
 }
